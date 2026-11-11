@@ -2,6 +2,14 @@
 
 **Cybersecurity Internship | Networkwalks**
 
+This repository contains the practical work completed during Week 02 of my Cybersecurity Internship at Networkwalks.
+
+The activities covered two practical modules:
+
+W2-PM1: Footprinting and Reconnaissance using Kali Linux tools.
+W2-PM5: Network Scanning and Network Discovery using Zenmap.
+The practicals focused on gathering publicly available information, identifying website technologies, enumerating DNS records, discovering active network hosts, and visualising network topology.
+
 ## Objectives
 
 The objectives of Week 2 were:
@@ -15,19 +23,23 @@ The objectives of Week 2 were:
 
 ## Lab Environment
 
-- **Operating System:** Kali Linux
-- **Network Scanning Tool:** Zenmap / Nmap 7.99
-- **Footprinting Tools:** WHOIS, WhatWeb, Nslookup, cURL, Wafw00f and DNSRecon
-- **Target Domain:** networkwalks.com
-- **Local Network Interface:** eth0
-- **Local IP Address:** 10.0.0.3/24
-- **Network Subnet:** 10.0.0.0/24
+| Parameter | Details |
+|---|---|
+| Operating System | Kali Linux |
+| Network Scanning Tool | Zenmap / Nmap 7.99 |
+| Footprinting Tools | WHOIS, WhatWeb, Nslookup, cURL, Wafw00f and DNSRecon |
+| Target Domain | networkwalks.com |
+| Local Network Interface | eth0 |
+| Local IP Address | 10.0.0.3/24 |
+| Network Subnet | 10.0.0.0/24 |
 
 ## Authorization and Scope
 
-The footprinting activity involved gathering publicly available information from the target domain, networkwalks.com. The network scanning activity was restricted to my local VirtualBox lab network (10.0.0.0/24).
+All activities were performed on systems and networks for which permission was secured or which I owned.
 
-No exploitation, password attacks or disruptive testing were performed.
+The footprinting activity was performed against the assigned Networkwalks domain with written permission. Network scanning was performed on my own local LAN.
+
+These exercises were conducted for educational and research purposes. No exploitation or unauthorized access was performed.
 
 ## Practical 1 – Footprinting and Reconnaissance (W2-PM1)
 
@@ -42,12 +54,9 @@ WHOIS was used to collect domain registration details.
 whois -h whois.verisign-grs.com networkwalks.com
 ```
 
-**Observations:**
-- Registrar: GoDaddy.com, LLC.
-- Creation Date: 06 November 2019.
-- Expiry Date: 06 November 2027.
-- Nameservers: NS6135.HOSTGATOR.COM and NS6136.HOSTGATOR.COM.
-- DNSSEC: Unsigned.
+Observation: WHOIS provided publicly available registration and name server information about the target domain.
+
+Security significance: Domain registration information can help security professionals understand domain ownership and hosting infrastructure.
 
 ### 2. WhatWeb – Website Technology Identification
 
@@ -276,9 +285,16 @@ The detailed Week 02 practical report, including methodology, tools used, observ
 
 ## Author
 
-**Name:** Kirtana Minoy
-Cybersecurity Intern – Networkwalks Internship: Networkwalks
-**Program/Batch:** B084D-Networkwalks
-**Domain** Cybersecurity
-**Week:** 02
+**Name:** Kirtana Minoy  
+
+**Role:** Cybersecurity Intern  
+
+**Internship:** Networkwalks  
+
+**Program/Batch:** B084D-Networkwalks  
+
+**Domain:** Cybersecurity  
+
+**Week:** 02  
+
 **Modules:** W2-PM1 and W2-PM5
