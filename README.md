@@ -213,25 +213,29 @@ The Topology section in Zenmap displayed the discovered hosts through a graphica
 
 ## Consolidated Findings
 
-No.	Practical	Tool Used	Key Findings
-1	PM1 – Footprinting	WHOIS	Identified registrar, domain creation and expiry dates, and nameservers.
-2	PM1 – Footprinting	WhatWeb	Identified Apache, WordPress, Bootstrap, jQuery and other website technologies.
-3	PM1 – Footprinting	Nslookup	Resolved networkwalks.com to IPv4 address 192.232.216.135.
-4	PM1 – Footprinting	cURL	Retrieved HTTP 200 response and inspected server response headers.
-5	PM1 – Footprinting	Wafw00f	Detected ModSecurity (SpiderLabs) Web Application Firewall.
-6	PM1 – Footprinting	DNSRecon	Identified 16 DNS records, including SOA, NS, MX, TXT and SRV records.
-7	PM5 – Network Scanning	Zenmap	Discovered three active hosts in the 10.0.0.0/24 subnet.
-8	PM5 – Network Scanning	Zenmap Topology	Generated a graphical representation of the discovered network hosts.
+| No. | Practical | Tool Used | Key Findings |
+|---|---|---|---|
+| 1 | PM1 | WHOIS | Identified registrar, domain creation and expiry dates, and nameservers. |
+| 2 | PM1 | WhatWeb | Identified Apache, WordPress, Bootstrap and jQuery. |
+| 3 | PM1 | Nslookup | Resolved networkwalks.com to 192.232.216.135. |
+| 4 | PM1 | cURL | Retrieved HTTP 200 response and inspected response headers. |
+| 5 | PM1 | Wafw00f | Detected ModSecurity (SpiderLabs) WAF. |
+| 6 | PM1 | DNSRecon | Identified 16 DNS records, including SOA, NS, MX, TXT and SRV. |
+| 7 | PM5 | Zenmap | Discovered three active hosts in 10.0.0.0/24. |
+| 8 | PM5 | Zenmap Topology | Generated a graphical representation of discovered hosts. |
 
 ## Risk Analysis
 
-#	Risk / Finding	Evidence / Observation	Potential Impact	Risk Level
-1	Web technology information exposed	WhatWeb identified WordPress 7.1.4 and WordPress Download Manager 3.3.76.	Attackers may use exposed technology and version information to identify software requiring further security review.	🟠 Medium
-2	Server IP address identifiable	Nslookup resolved the domain to 192.232.216.135.	Provides information about the network location of the web service.	🟡 Low
-3	HTTP technical information exposed	cURL returned HTTP response headers and exposed the /wp-json/ endpoint.	May assist technology fingerprinting and further enumeration.	🟡 Low
-4	WAF technology identifiable	Wafw00f identified ModSecurity (SpiderLabs) WAF.	Reveals information about the web application's security architecture.	🟡 Low
-5	DNS infrastructure information exposed	DNSRecon identified 16 DNS records, including SOA, NS, MX, TXT and SRV records.	DNS information can help build a broader infrastructure profile.	🟠 Medium
-6	Multiple live hosts visible on local network	Zenmap identified three live hosts: 10.0.0.1, 10.0.0.2 and 10.0.0.3.	Unknown or unauthorised devices may potentially be present on a network.
+| # | Risk / Finding | Evidence / Observation | Potential Impact | Risk Level |
+|---|---|---|---|---|
+| 1 | Web technology information exposed | WordPress 7.1.4 and WordPress Download Manager 3.3.76 identified. | May help attackers identify software requiring security review. | 🟠 Medium |
+| 2 | Server IP address identifiable | Domain resolved to 192.232.216.135. | Reveals the network location of the web service. | 🟡 Low |
+| 3 | HTTP technical information exposed | HTTP headers and /wp-json/ endpoint identified. | May assist technology fingerprinting. | 🟡 Low |
+| 4 | WAF technology identifiable | ModSecurity (SpiderLabs) detected. | Reveals information about security infrastructure. | 🟡 Low |
+| 5 | DNS infrastructure information exposed | 16 DNS records identified. | Helps build a profile of domain and mail infrastructure. | 🟠 Medium |
+| 6 | Multiple live hosts visible | Three hosts discovered in 10.0.0.0/24. | Unknown devices may require investigation. | 🟠 Medium |
+
+*Note: These are preliminary risk assessments, not confirmed vulnerabilities.*
 
 ## Security Recommendations
 
